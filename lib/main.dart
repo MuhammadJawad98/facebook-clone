@@ -88,7 +88,7 @@ class MyApp extends StatelessWidget {
             children: [
               HomeScreen(),
               VideoPlayer_Screen(),
-              ProfilePicCard(),
+              ProfileScreen(),
               Notification_Screen(),
               Setting_Screen(),
             ],
