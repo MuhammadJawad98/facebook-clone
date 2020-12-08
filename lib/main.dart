@@ -1,6 +1,7 @@
 import 'package:facebook/ui/HomeScreen.dart';
 import 'package:facebook/ui/Notification_Screen.dart';
 import 'package:facebook/ui/ProfileScreen.dart';
+import 'package:facebook/ui/Setting_Screen.dart';
 import 'package:facebook/ui/VideoPlayer_Screen.dart';
 import 'package:flutter/material.dart';
 
@@ -89,10 +90,7 @@ class MyApp extends StatelessWidget {
               VideoPlayer_Screen(),
               ProfilePicCard(),
               Notification_Screen(),
-              VideoPlayer_Screen(),
-
-              // FirstScreen(),
-              // SecondScreen(),
+              Setting_Screen(),
             ],
           ),
         ),
