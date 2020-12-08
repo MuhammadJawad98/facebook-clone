@@ -1,5 +1,7 @@
 import 'package:facebook/ui/HomeScreen.dart';
+import 'package:facebook/ui/Notification_Screen.dart';
 import 'package:facebook/ui/ProfileScreen.dart';
+import 'package:facebook/ui/VideoPlayer_Screen.dart';
 import 'package:flutter/material.dart';
 
 import 'components/ProfileWidgets/ProfilePicCard.dart';
@@ -84,10 +86,10 @@ class MyApp extends StatelessWidget {
           body: TabBarView(
             children: [
               HomeScreen(),
-              HomeScreen(),
+              VideoPlayer_Screen(),
               ProfilePicCard(),
-              HomeScreen(),
-              HomeScreen(),
+              Notification_Screen(),
+              VideoPlayer_Screen(),
 
               // FirstScreen(),
               // SecondScreen(),

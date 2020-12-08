@@ -134,64 +134,64 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(Icons.home),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Live in Lahore,Pakistan',
-                        style: TextStyle(color: Colors.black),
-                      )
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(Icons.location_on),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'From Lahore,Pakistan',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(Icons.linear_scale),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'See Your About Info',
-                        style: TextStyle(color: Colors.black),
-                      )
-                    ],
-                  ),
-                ),
-                Container(
-                  width: _size.width,
-                  child: Text(
-                    'Edit Public Details',
-                    style: TextStyle(
-                        color: Color(0xFF1f76d3), fontWeight: FontWeight.bold),
-                  ),
-                  alignment: Alignment.center,
-                  padding: EdgeInsets.all(10),
-                  color: Color(0xFFe7f3ff),
-                )
+             Padding(
+               padding: const EdgeInsets.all(10.0),
+               child: Column(children: [
+                 Row(
+                   children: <Widget>[
+                     Icon(Icons.home),
+                     SizedBox(
+                       width: 10,
+                     ),
+                     Text(
+                       'Live in Lahore,Pakistan',
+                       style: TextStyle(color: Colors.black),
+                     )
+                   ],
+                 ),
+                 Row(
+                   children: <Widget>[
+                     Icon(Icons.location_on),
+                     SizedBox(
+                       width: 10,
+                     ),
+                     Text(
+                       'From Lahore,Pakistan',
+                       style: TextStyle(
+                           color: Colors.black, fontWeight: FontWeight.bold),
+                     )
+                   ],
+                 ),
+                 Row(
+                   children: <Widget>[
+                     Icon(Icons.linear_scale),
+                     SizedBox(
+                       width: 10,
+                     ),
+                     Text(
+                       'See Your About Info',
+                       style: TextStyle(color: Colors.black),
+                     )
+                   ],
+                 ),
+               ],),
+             )
+
               ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left:8.0,right:8.0),
+            child: Container(
+              width: _size.width,
+              child: Text(
+                'Edit Public Details',
+                style: TextStyle(
+                    color: Color(0xFF1f76d3), fontWeight: FontWeight.bold),
+              ),
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(10),
+              color: Color(0xFFe7f3ff),
             ),
           ),
           Divider(
@@ -200,7 +200,7 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
           ),
           Container(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left:10.0,right: 10.0),
               child: Column(
                 children: [
                   Row(
