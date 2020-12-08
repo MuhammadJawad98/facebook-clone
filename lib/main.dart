@@ -83,9 +83,9 @@ class MyApp extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
+              HomeScreen(),
+              HomeScreen(),
               ProfilePicCard(),
-              HomeScreen(),
-              HomeScreen(),
               HomeScreen(),
               HomeScreen(),
 
