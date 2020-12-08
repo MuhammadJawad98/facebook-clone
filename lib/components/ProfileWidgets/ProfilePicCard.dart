@@ -1,3 +1,5 @@
+import 'package:facebook/components/HomeScreenWidgets/Divider.dart';
+import 'package:facebook/components/HomeScreenWidgets/NewFeeds.dart';
 import 'package:facebook/components/HomeScreenWidgets/PostWriteWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -183,8 +185,7 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
                   child: Text(
                     'Edit Public Details',
                     style: TextStyle(
-                        color: Color(0xFF1f76d3),
-                        fontWeight: FontWeight.bold),
+                        color: Color(0xFF1f76d3), fontWeight: FontWeight.bold),
                   ),
                   alignment: Alignment.center,
                   padding: EdgeInsets.all(10),
@@ -229,9 +230,8 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
                           fontSize: 20,
                         ),
                       )),
-
                   GridView.count(
-                    padding: EdgeInsets.only(top: 10,bottom: 5),
+                    padding: EdgeInsets.only(top: 10, bottom: 5),
                     // Create a grid with 2 columns. If you change the scrollDirection to
                     // horizontal, this produces 2 rows.
                     crossAxisCount: 3,
@@ -244,11 +244,22 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
                       return Card(
                         child: Column(
                           children: [
-                            Flexible(child: Image.network('https://images.unsplash.com/photo-1606214443822-7997abf29104?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDF8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', width: 200,height:250,fit: BoxFit.cover,)),
-                         Padding(
-                           padding: const EdgeInsets.only(top: 2.0,bottom: 2.0),
-                           child: Text('Zuraiz Atif Ansari',softWrap: true,),
-                         )],
+                            Flexible(
+                                child: Image.network(
+                              'https://images.unsplash.com/photo-1606214443822-7997abf29104?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDF8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+                              width: 200,
+                              height: 250,
+                              fit: BoxFit.cover,
+                            )),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 2.0, bottom: 2.0),
+                              child: Text(
+                                'Zuraiz Atif Ansari',
+                                softWrap: true,
+                              ),
+                            )
+                          ],
                         ),
                       );
                     }),
@@ -258,25 +269,54 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
                     child: Text(
                       'See All Friends',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold
-                      ,color: Colors.black),
+                          fontWeight: FontWeight.bold, color: Colors.black),
                     ),
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(10),
                     color: Colors.grey[300],
-                    margin: EdgeInsets.only(top: 10,bottom: 10),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
                   ),
-
-                  Container(
-                      height: 8, decoration: BoxDecoration(color: Colors.grey[350])),
+                  Divider_Widget(),
                   PostWriteWidget(),
-                  Container(child: Row(children: <Widget>[
-                    FlatButton.icon(onPressed: null, icon: Icon(Icons.photo_album,color: Colors.black87,), label: Text('Photos',style: TextStyle(color: Colors.black87),)),
-                    FlatButton.icon(onPressed: null, icon: Icon(Icons.cloud_queue_rounded,color: Colors.black87,), label: Text('Did You Know',style: TextStyle(color: Colors.black87),))
-                  ],),),
-                  Container(
-                      height: 8, decoration: BoxDecoration(color: Colors.grey[350])),
-
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      child: Row(
+                        children: <Widget>[
+                          FlatButton.icon(
+                            onPressed: null,
+                            icon: Icon(
+                              Icons.photo_album,
+                              color: Colors.black87,
+                            ),
+                            label: Text(
+                              'Photos',
+                              style: TextStyle(color: Colors.black87),
+                            ),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(18.0),
+                                side: BorderSide(color: Colors.grey)),
+                          ),
+                          SizedBox(width: 10,),
+                          FlatButton.icon(
+                              onPressed: null,
+                              icon: Icon(
+                                Icons.cloud_queue_rounded,
+                                color: Colors.black87,
+                              ),
+                              label: Text(
+                                'Did You Know',
+                                style: TextStyle(color: Colors.black87),
+                              ),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18.0),
+                              side: BorderSide(color: Colors.grey)),)
+                        ],
+                      ),
+                    ),
+                  ),
+                  Divider_Widget(),
+                  NewFeeds(),
                 ],
               ),
             ),
