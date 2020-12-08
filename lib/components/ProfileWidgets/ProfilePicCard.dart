@@ -122,6 +122,7 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
                       Flexible(
                         flex: 2,
                         child: FlatButton(
+                          onPressed: () {  },
                           child: Text(
                             '...',
                             style: TextStyle(
