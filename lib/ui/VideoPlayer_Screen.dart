@@ -7,7 +7,7 @@ class VideoPlayer_Screen extends StatefulWidget {
 class _VideoPlayer_ScreenState extends State<VideoPlayer_Screen> {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.builder(  
       itemCount: data.length,
       itemBuilder: (BuildContext context, int index) => EntryItem(
         data[index],

@@ -17,169 +17,167 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(children: <Widget>[
-          Card(
-            child: Column(
-              children: <Widget>[
-                Stack(
-                  children: <Widget>[
-                    Column(
-                      children: [
-                        Stack(children: <Widget>[
-                          Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 200,
-                            color: Colors.amber,
-                            child: Image.network(
-                              'https://images.unsplash.com/photo-1606990972809-f6dff5d17367?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDl8NnNNVmpUTFNrZVF8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          new Positioned(
-                            right: 10,
-                            bottom: 20,
-                            child: CircleAvatar(
-                              backgroundColor: Colors.grey[350],
-                              radius: 20,
-                              child: Icon(
-                                Icons.camera_alt_rounded,
-                                color: Colors.black87,
-                              ),
-                            ),
-                          )
-                        ]),
+          Column(
+            children: <Widget>[
+              Stack(
+                children: <Widget>[
+                  Column(
+                    children: [
+                      Stack(children: <Widget>[
                         Container(
-                          height: 100,
-                          color: Colors.white,
+                          width: _size.width,
+                          height: 200,
+                          color: Colors.amber,
+                          child: Image.network(
+                            'https://images.unsplash.com/photo-1606990972809-f6dff5d17367?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDl8NnNNVmpUTFNrZVF8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      ],
-                    ),
-                    new Positioned(
-                      child: Stack(
-                        children: <Widget>[
-                          CircleAvatar(
-                            radius: 80,
-                            backgroundColor: Colors.white,
-                            child: CircleAvatar(
-                              child: ClipOval(
-                                child: Image.network(
-                                    'https://images.unsplash.com/photo-1492446845049-9c50cc313f00?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1lbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-                                    width: 150,
-                                    fit: BoxFit.cover),
-                              ),
-                              radius: 73,
+                        new Positioned(
+                          right: 10,
+                          bottom: 20,
+                          child: CircleAvatar(
+                            backgroundColor: Colors.grey[350],
+                            radius: 20,
+                            child: Icon(
+                              Icons.camera_alt_rounded,
+                              color: Colors.black87,
                             ),
                           ),
-                          new Positioned(
-                            child: CircleAvatar(
-                              backgroundColor: Colors.grey[350],
-                              radius: 20,
-                              child: Icon(
-                                Icons.camera_alt_rounded,
-                                color: Colors.black87,
-                              ),
-                            ),
-                            right: 10,
-                            bottom: 10,
-                          )
-                        ],
-                      ),
-                      top: 130,
-                      left: 130,
-                    ),
-                  ],
-                ),
-                Text(
-                  'Muhammad Jawad',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Flexible(
-                        flex: 4,
-                        child: FlatButton.icon(
-                          minWidth: 350,
-                          textColor: Colors.white,
-                          color: Colors.blue[900],
-                          icon: Icon(
-                            Icons.add_circle_outlined,
-                            color: Colors.white,
-                          ),
-                          //`Icon` to display
-                          label: Text('Add to Story'),
-                          //`Text` to display
-                          onPressed: () {
-                            //Code to execute when Floating Action Button is clicked
-                            //...
-                          },
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                        ),
-                      ),
-                      Flexible(
-                        flex: 2,
-                        child: FlatButton(
-                          onPressed: () {  },
-                          child: Text(
-                            '...',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 40,
-                                color: Colors.black),
-                          ),
-                        ),
+                        )
+                      ]),
+                      Container(
+                        height: 100,
+                        color: Colors.white,
                       ),
                     ],
                   ),
+                  new Positioned(
+                    child: Stack(
+                      children: <Widget>[
+                        CircleAvatar(
+                          radius: 80,
+                          backgroundColor: Colors.white,
+                          child: CircleAvatar(
+                            child: ClipOval(
+                              child: Image.network(
+                                  'https://images.unsplash.com/photo-1492446845049-9c50cc313f00?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1lbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+                                  width: 150,
+                                  fit: BoxFit.cover),
+                            ),
+                            radius: 73,
+                          ),
+                        ),
+                        new Positioned(
+                          child: CircleAvatar(
+                            backgroundColor: Colors.grey[350],
+                            radius: 20,
+                            child: Icon(
+                              Icons.camera_alt_rounded,
+                              color: Colors.black87,
+                            ),
+                          ),
+                          right: 10,
+                          bottom: 10,
+                        )
+                      ],
+                    ),
+                    top: 130,
+                    left: (_size.width/2)-65,
+                  ),
+                ],
+              ),
+              Text(
+                'Muhammad Jawad',
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Flexible(
+                      flex: 4,
+                      child: FlatButton.icon(
+                        minWidth: 350,
+                        textColor: Colors.white,
+                        color: Colors.blue[900],
+                        icon: Icon(
+                          Icons.add_circle_outlined,
+                          color: Colors.white,
+                        ),
+                        //`Icon` to display
+                        label: Text('Add to Story'),
+                        //`Text` to display
+                        onPressed: () {
+                          //Code to execute when Floating Action Button is clicked
+                          //...
+                        },
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      flex: 2,
+                      child: FlatButton(
+                        onPressed: () {  },
+                        child: Text(
+                          '...',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 40,
+                              color: Colors.black),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-             Padding(
-               padding: const EdgeInsets.all(10.0),
-               child: Column(children: [
-                 Row(
-                   children: <Widget>[
-                     Icon(Icons.home),
-                     SizedBox(
-                       width: 10,
-                     ),
-                     Text(
-                       'Live in Lahore,Pakistan',
-                       style: TextStyle(color: Colors.black),
-                     )
-                   ],
-                 ),
-                 Row(
-                   children: <Widget>[
-                     Icon(Icons.location_on),
-                     SizedBox(
-                       width: 10,
-                     ),
-                     Text(
-                       'From Lahore,Pakistan',
-                       style: TextStyle(
-                           color: Colors.black, fontWeight: FontWeight.bold),
-                     )
-                   ],
-                 ),
-                 Row(
-                   children: <Widget>[
-                     Icon(Icons.linear_scale),
-                     SizedBox(
-                       width: 10,
-                     ),
-                     Text(
-                       'See Your About Info',
-                       style: TextStyle(color: Colors.black),
-                     )
-                   ],
-                 ),
-               ],),
-             )
+              ),
+           Padding(
+             padding: const EdgeInsets.all(10.0),
+             child: Column(children: [
+               Row(
+                 children: <Widget>[
+                   Icon(Icons.home),
+                   SizedBox(
+                     width: 10,
+                   ),
+                   Text(
+                     'Live in Lahore,Pakistan',
+                     style: TextStyle(color: Colors.black),
+                   )
+                 ],
+               ),
+               Row(
+                 children: <Widget>[
+                   Icon(Icons.location_on),
+                   SizedBox(
+                     width: 10,
+                   ),
+                   Text(
+                     'From Lahore,Pakistan',
+                     style: TextStyle(
+                         color: Colors.black, fontWeight: FontWeight.bold),
+                   )
+                 ],
+               ),
+               Row(
+                 children: <Widget>[
+                   Icon(Icons.linear_scale),
+                   SizedBox(
+                     width: 10,
+                   ),
+                   Text(
+                     'See Your About Info',
+                     style: TextStyle(color: Colors.black),
+                   )
+                 ],
+               ),
+             ],),
+           )
 
-              ],
-            ),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.only(left:8.0,right:8.0),
@@ -231,6 +229,40 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
                           fontSize: 20,
                         ),
                       )),
+                  // GridView.count(
+                  //   padding: EdgeInsets.only(top: 10, bottom: 5),
+                  //   // Create a grid with 2 columns. If you change the scrollDirection to
+                  //   // horizontal, this produces 2 rows.
+                  //   crossAxisCount: 3,
+                  //   crossAxisSpacing: 4.0,
+                  //   // scrollDirection: Axis.vertical,
+                  //   shrinkWrap: true,
+                  //   primary: false,
+                  //   // Generate 100 widgets that display their index in the List.
+                  //   children: List.generate(6, (index) {
+                  //     return Card(
+                  //       child: Column(
+                  //         children: [
+                  //           Flexible(
+                  //               child: Image.network(
+                  //             'https://images.unsplash.com/photo-1606214443822-7997abf29104?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDF8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+                  //             width: 200,
+                  //             height: 250,
+                  //             fit: BoxFit.cover,
+                  //           )),
+                  //           Padding(
+                  //             padding:
+                  //                 const EdgeInsets.only(top: 2.0, bottom: 2.0),
+                  //             child: Text(
+                  //               'Zuraiz Atif Ansari',
+                  //               softWrap: true,
+                  //             ),
+                  //           )
+                  //         ],
+                  //       ),
+                  //     );
+                  //   }),
+                  // ),
                   GridView.count(
                     padding: EdgeInsets.only(top: 10, bottom: 5),
                     // Create a grid with 2 columns. If you change the scrollDirection to
@@ -247,14 +279,14 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
                           children: [
                             Flexible(
                                 child: Image.network(
-                              'https://images.unsplash.com/photo-1606214443822-7997abf29104?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDF8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-                              width: 200,
-                              height: 250,
-                              fit: BoxFit.cover,
-                            )),
+                                  'https://images.unsplash.com/photo-1606214443822-7997abf29104?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDF8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+                                  width: 200,
+                                  height: 250,
+                                  fit: BoxFit.cover,
+                                )),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(top: 2.0, bottom: 2.0),
+                              const EdgeInsets.only(top: 2.0, bottom: 2.0),
                               child: Text(
                                 'Zuraiz Atif Ansari',
                                 softWrap: true,

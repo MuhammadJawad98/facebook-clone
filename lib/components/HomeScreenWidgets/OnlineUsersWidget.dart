@@ -19,7 +19,7 @@ class _OnlineUserWidgetState extends State<OnlineUserWidget> {
               child: CircleAvatar(
                 radius: 25,
                 backgroundImage:
-                    NetworkImage('https://www.woolha.com/media/2020/03/eevee.png'),
+                    NetworkImage(widget.imgUrl),
                 backgroundColor: Colors.red,
               ),
             ),

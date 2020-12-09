@@ -14,20 +14,16 @@ class UserStories extends StatelessWidget {
             Container(
               width: 100,
               height: 160,
-              child: Column(
-                children: <Widget>[
-                  Image.network(
-                    "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjF8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-                    loadingBuilder: (context, child, progress) {
-                      return progress == null
-                          ? child
-                          : LinearProgressIndicator();
-                    },
-                    semanticLabel: 'User Feeds Image',
-                    width: 100,
-                    fit: BoxFit.cover,
-                  ),
-                ],
+              child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(12)),
+                child: FadeInImage.assetNetwork(
+                  width: 100,
+                  height: 160,
+                  placeholder: 'waiting.png',
+                  image:
+                      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjF8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             new Positioned(
@@ -41,7 +37,21 @@ class UserStories extends StatelessWidget {
                     backgroundImage: NetworkImage(
                         'https://images.unsplash.com/photo-1497551060073-4c5ab6435f12?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzF8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
                   ),
-                ))
+                )),
+            new Positioned(
+              child: Container(
+                 width: 100,
+                  color: Color.fromRGBO(255, 255, 255, 0.19),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text(
+                      'Jawad',
+                      style: TextStyle(color: Colors.white),
+                      textAlign: TextAlign.center,
+                    ),
+                  )),
+              bottom: 1,
+            )
           ],
         ),
       ),

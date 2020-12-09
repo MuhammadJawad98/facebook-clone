@@ -89,7 +89,7 @@ class MyApp extends StatelessWidget {
               HomeScreen(),
               VideoPlayer_Screen(),
               ProfileScreen(),
-              Notification_Screen(),
+              NotificationScreen(),
               Setting_Screen(),
             ],
           ),

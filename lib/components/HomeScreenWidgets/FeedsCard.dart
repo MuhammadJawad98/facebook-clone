@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'IconsStack.dart';
 
 class FeedCard extends StatelessWidget {
@@ -45,8 +44,7 @@ class FeedCard extends StatelessWidget {
                                       width: 10,
                                     ),
                                     Container(
-                                      child: Icon(
-                                        Icons.access_time_sharp,
+                                      child: Icon(Icons.public,
                                         size: 15,
                                       ),
                                     )
@@ -56,7 +54,7 @@ class FeedCard extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Icon(Icons.menu)
+                        Icon(Icons.more_horiz)
                       ],
                     ),
                   ),

@@ -16,11 +16,22 @@ class CreatStory_Card extends StatelessWidget {
               height: 160,
               child: Column(
                 children: <Widget>[
-                  Image.network(
-                    "https://images.unsplash.com/photo-1581382575275-97901c2635b7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8bWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-                    height: 100,
-                    width: 100,
-                    fit: BoxFit.cover,
+                  // Image.network(
+                  //   "https://images.unsplash.com/photo-1581382575275-97901c2635b7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8bWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                  //   height: 100,
+                  //   width: 100,
+                  //   fit: BoxFit.cover,
+                  // ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    child: FadeInImage.assetNetwork(
+                      height: 100,
+                        width: 100,
+                      placeholder: 'waiting.png',
+                      image:
+                          "https://images.unsplash.com/photo-1581382575275-97901c2635b7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8bWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
@@ -50,7 +61,7 @@ class CreatStory_Card extends StatelessWidget {
           ],
         ),
       ),
-      margin: EdgeInsets.only(left:5,right:5),
+      margin: EdgeInsets.only(left: 5, right: 5),
     );
   }
 }
