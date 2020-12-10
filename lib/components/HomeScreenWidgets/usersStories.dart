@@ -1,61 +1,98 @@
+import 'package:facebook/ui/PostWritingScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class UserStories extends StatelessWidget {
+import '../Home.dart';
+
+class UserStories extends StatefulWidget {
+  // int index;
+  String StoryImage;
+  String userImage;
+  String userName;
+  bool first = false;
+
+  UserStories(
+      {Key key, this.StoryImage, this.userImage, this.userName, this.first})
+      : super(key: key);
+
+  // UserStories(this.index);
+
+  @override
+  _UserStoriesState createState() => _UserStoriesState();
+}
+
+class _UserStoriesState extends State<UserStories> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: new Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Stack(
-          children: <Widget>[
-            Container(
-              width: 100,
-              height: 160,
-              child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(12)),
-                child: FadeInImage.assetNetwork(
-                  width: 100,
-                  height: 160,
-                  placeholder: 'waiting.png',
-                  image:
-                      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjF8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-                  fit: BoxFit.cover,
-                ),
+      padding: EdgeInsets.only(left: 10, bottom: 10, top: 10),
+      child: AspectRatio(
+        aspectRatio: 1.6 / 2.6,
+        child: GestureDetector(
+          onTap: () {
+            if (widget.first) {
+            } else {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => MoreStories()));
+            }
+          },
+          child: Container(
+            margin: EdgeInsets.only(right: 10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              image: DecorationImage(
+                  image: NetworkImage(widget.first
+                      ? "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8bWVufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      : widget.StoryImage),
+                  fit: BoxFit.cover),
+            ),
+            child: Container(
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  gradient:
+                      LinearGradient(begin: Alignment.bottomRight, colors: [
+                    Colors.black.withOpacity(.9),
+                    Colors.black.withOpacity(.1),
+                  ])),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  widget.first
+                      ? Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white,
+                            border: Border.all(color: Colors.white, width: 2),
+                          ),
+                          child: Icon(
+                            Icons.add,
+                            color: Color(0xFF1777F2),
+                          ),
+                        )
+                      : Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(color: Colors.white, width: 2),
+                              image: DecorationImage(
+                                  image: NetworkImage(widget.userImage),
+                                  fit: BoxFit.cover)),
+                        ),
+                  Text(
+                    widget.userName,
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
               ),
             ),
-            new Positioned(
-                top: 8,
-                left: 5,
-                child: CircleAvatar(
-                  backgroundColor: Colors.blue[700],
-                  radius: 15,
-                  child: CircleAvatar(
-                    radius: 12,
-                    backgroundImage: NetworkImage(
-                        'https://images.unsplash.com/photo-1497551060073-4c5ab6435f12?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzF8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
-                  ),
-                )),
-            new Positioned(
-              child: Container(
-                 width: 100,
-                  color: Color.fromRGBO(255, 255, 255, 0.19),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Text(
-                      'Jawad',
-                      style: TextStyle(color: Colors.white),
-                      textAlign: TextAlign.center,
-                    ),
-                  )),
-              bottom: 1,
-            )
-          ],
+          ),
         ),
       ),
-      margin: EdgeInsets.only(left: 5, right: 5),
     );
   }
 }

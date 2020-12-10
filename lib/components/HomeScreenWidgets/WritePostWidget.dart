@@ -1,4 +1,4 @@
-import 'package:facebook/components/HomeScreenWidgets/user_circleImage.dart';
+import 'package:facebook/components/HomeScreenWidgets/user_ImageWidget.dart';
 import 'package:facebook/ui/PostWritingScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +16,6 @@ class _WritePostState extends State<WritePost> {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           User_ImageWidget(),
           GestureDetector(

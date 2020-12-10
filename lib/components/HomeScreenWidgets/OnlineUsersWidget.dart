@@ -17,18 +17,18 @@ class _OnlineUserWidgetState extends State<OnlineUserWidget> {
           children: [
             Container(
               child: CircleAvatar(
-                radius: 25,
+                radius: 20,
                 backgroundImage:
                     NetworkImage(widget.imgUrl),
-                backgroundColor: Colors.red,
+
               ),
             ),
             Positioned(
-              right: 2,
-              bottom: 2,
+              right: 1,
+              bottom: 1,
               child: CircleAvatar(
                 backgroundColor: Colors.green,
-                radius: 8,
+                radius: 6,
               ),
             ),
           ],

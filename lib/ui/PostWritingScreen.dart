@@ -1,4 +1,4 @@
-import 'package:facebook/components/HomeScreenWidgets/user_circleImage.dart';
+import 'package:facebook/components/HomeScreenWidgets/user_ImageWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 

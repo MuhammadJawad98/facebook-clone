@@ -4,7 +4,7 @@ import 'package:facebook/ui/ProfileScreen.dart';
 import 'package:facebook/ui/Setting_Screen.dart';
 import 'package:facebook/ui/VideoPlayer_Screen.dart';
 import 'package:flutter/material.dart';
-
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'components/ProfileWidgets/ProfilePicCard.dart';
 
 void main() => runApp(MyApp());
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
               CircleAvatar(
                 backgroundColor: Colors.grey[200],
                 child: Icon(
-                  Icons.near_me_rounded,
+                  MdiIcons.facebookMessenger,
                   color: Colors.grey[900],
                 ),
               ),
