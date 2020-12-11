@@ -1,135 +1,13 @@
 import 'package:facebook/components/HomeScreenWidgets/Divider.dart';
-import 'package:facebook/components/HomeScreenWidgets/FeedsCard.dart';
-import 'package:facebook/components/HomeScreenWidgets/NewFeeds.dart';
+import 'package:facebook/components/HomeScreenWidgets/PostScreen.dart';
 import 'package:facebook/components/HomeScreenWidgets/PostWriteWidget.dart';
+import 'package:facebook/components/model/const.dart';
 import 'package:facebook/components/model/newfeeds.dart';
 import 'package:facebook/components/model/user.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePicCard extends StatefulWidget {
-  List<feedData> list = <feedData>[
-    feedData(
-        date: 'today at 3:50pm',
-        name: 'Alex',
-        text:
-            'In every walk in with nature one receives far more than he seeks. John Muir',
-        total_comments: '19 comments',
-        total_likes: '19 likes',
-        total_share: '12 share',
-        img_url:
-            'https://images.unsplash.com/photo-1556125574-d7f27ec36a06?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZXZlbnRzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        user_image:
-            'https://images.unsplash.com/photo-1602024242516-fbc9d4fda4b6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDN8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
-    feedData(
-        date: 'today at 3:50pm',
-        name: 'Alex',
-        text:
-            'In every walk in with nature one receives far more than he seeks. John Muir',
-        total_comments: '19 comments',
-        total_likes: '19 likes',
-        total_share: '12 share',
-        img_url:
-            'https://images.unsplash.com/photo-1585251173119-90ab21d70067?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8ZXZlbnRzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        user_image:
-            'https://images.unsplash.com/photo-1602024242516-fbc9d4fda4b6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDN8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
-    feedData(
-        date: 'today at 3:50pm',
-        name: 'Alex',
-        text:
-            'In every walk in with nature one receives far more than he seeks. John Muir',
-        total_comments: '19 comments',
-        total_likes: '19 likes',
-        total_share: '12 share',
-        img_url:
-            'https://images.unsplash.com/photo-1580600301356-2062459b0eb5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8ZXZlbnRzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        user_image:
-            'https://images.unsplash.com/photo-1602024242516-fbc9d4fda4b6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDN8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
-    feedData(
-        date: 'today at 3:50pm',
-        name: 'Alex',
-        text:
-            'In every walk in with nature one receives far more than he seeks. John Muir',
-        total_comments: '19 comments',
-        total_likes: '19 likes',
-        total_share: '12 share',
-        img_url:
-            'https://images.unsplash.com/flagged/photo-1570183075251-42dfe72c138e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50c3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        user_image:
-            'https://images.unsplash.com/photo-1602024242516-fbc9d4fda4b6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDN8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
-    feedData(
-        date: 'today at 3:50pm',
-        name: 'Alex',
-        text:
-            'In every walk in with nature one receives far more than he seeks. John Muir',
-        total_comments: '19 comments',
-        total_likes: '19 likes',
-        total_share: '12 share',
-        img_url:
-            'https://images.unsplash.com/photo-1571215682742-561893604b40?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTZ8fGV2ZW50c3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        user_image:
-            'https://images.unsplash.com/photo-1602024242516-fbc9d4fda4b6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDN8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
-    feedData(
-        date: 'today at 3:50pm',
-        name: 'Alex',
-        text:
-            'In every walk in with nature one receives far more than he seeks. John Muir',
-        total_comments: '19 comments',
-        total_likes: '19 likes',
-        total_share: '12 share',
-        img_url:
-            'https://images.unsplash.com/photo-1571348265141-e45fb052def4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjB8fGV2ZW50c3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        user_image:
-            'https://images.unsplash.com/photo-1602024242516-fbc9d4fda4b6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDN8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
-    feedData(
-        date: 'today at 3:50pm',
-        name: 'Alex',
-        text:
-            'In every walk in with nature one receives far more than he seeks. John Muir',
-        total_comments: '19 comments',
-        total_likes: '19 likes',
-        total_share: '12 share',
-        img_url:
-            'https://images.unsplash.com/photo-1571348265141-e45fb052def4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjB8fGV2ZW50c3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        user_image:
-            'https://images.unsplash.com/photo-1602024242516-fbc9d4fda4b6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDN8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
-    feedData(
-        date: 'today at 3:50pm',
-        name: 'Alex',
-        text:
-            'In every walk in with nature one receives far more than he seeks. John Muir',
-        total_comments: '19 comments',
-        total_likes: '19 likes',
-        total_share: '12 share',
-        img_url:
-            'https://images.unsplash.com/photo-1573525974207-d89fdb28351a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjl8fGV2ZW50c3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        user_image:
-            'https://images.unsplash.com/photo-1602024242516-fbc9d4fda4b6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDN8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
-    feedData(
-        date: 'today at 3:50pm',
-        name: 'Alex',
-        text:
-            'In every walk in with nature one receives far more than he seeks. John Muir',
-        total_comments: '19 comments',
-        total_likes: '19 likes',
-        total_share: '12 share',
-        img_url: '',
-        user_image:
-            'https://images.unsplash.com/photo-1602024242516-fbc9d4fda4b6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDN8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
-    feedData(
-        date: 'today at 3:50pm',
-        name: 'Alex',
-        text:
-            'In every walk in with nature one receives far more than he seeks. John Muir',
-        total_comments: '19 comments',
-        total_likes: '19 likes',
-        total_share: '12 share',
-        img_url:
-            'https://images.unsplash.com/photo-1578364250106-dffb076c2dde?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzV8fGV2ZW50c3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        user_image:
-            'https://images.unsplash.com/photo-1602024242516-fbc9d4fda4b6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDN8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
-  ];
-
   @override
   _ProfilePicCardState createState() => _ProfilePicCardState();
 }
@@ -153,7 +31,7 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
                         Container(
                           width: _size.width,
                           height: 200,
-                          color: Colors.amber,
+                          color: Colors.transparent,
                           child: Image.network(
                             'https://images.unsplash.com/photo-1606990972809-f6dff5d17367?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDl8NnNNVmpUTFNrZVF8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
                             fit: BoxFit.cover,
@@ -185,13 +63,13 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
                           radius: 80,
                           backgroundColor: Colors.white,
                           child: CircleAvatar(
-                            child: ClipOval(
-                              child: Image.network(
-                                  'https://images.unsplash.com/photo-1492446845049-9c50cc313f00?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1lbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-                                  width: 150,
-                                  fit: BoxFit.cover),
-                            ),
+                            backgroundImage:
+                                NetworkImage(Const.list_userfeed[0].user_image),
+                            // child: Image.network(Const.list_userfeed[0].user_image,
+                            //     width: 150,
+                            //     fit: BoxFit.cover),
                             radius: 73,
+                            backgroundColor: Colors.transparent,
                           ),
                         ),
                         new Positioned(
@@ -214,7 +92,7 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
                 ],
               ),
               Text(
-                'Muhammad Jawad',
+                Const.list_userfeed[0].name,
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
               Padding(
@@ -324,7 +202,6 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
             color: Colors.grey,
             thickness: 1,
           ),
-
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -392,23 +269,34 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
                 // ),
                 GridView.count(
                   padding: EdgeInsets.only(top: 10, bottom: 5),
-                  // Create a grid with 2 columns. If you change the scrollDirection to
-                  // horizontal, this produces 2 rows.
                   crossAxisCount: 3,
+                  mainAxisSpacing: 4.0,
                   crossAxisSpacing: 4.0,
                   // scrollDirection: Axis.vertical,
                   shrinkWrap: true,
                   primary: false,
                   // Generate 100 widgets that display their index in the List.
-                  children: List.generate(6, (index) {
-                    return Card(
-                      child: Flexible(
-                          child: Image.network(
-                            'https://images.unsplash.com/photo-1606214443822-7997abf29104?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDF8fG1lbnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-                            width: 200,
-                            height: 250,
-                            fit: BoxFit.cover,
-                          )),
+                  children: List.generate(Const.user_list.length, (index) {
+                    return Container(
+                      // padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          gradient: LinearGradient(
+                              begin: Alignment.bottomRight,
+                              colors: [
+                                Colors.black.withOpacity(.9),
+                                Colors.black.withOpacity(.1),
+                              ])),
+                      child: Container(
+                        // margin: EdgeInsets.only(right: 10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          image: DecorationImage(
+                              image:
+                                  NetworkImage(Const.user_list[index].img_url),
+                              fit: BoxFit.cover),
+                        ),
+                      ),
                     );
                   }),
                 ),
@@ -427,7 +315,6 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
               ],
             ),
           ),
-
           Divider_Widget(),
           PostWriteWidget(),
           Padding(
@@ -471,7 +358,53 @@ class _ProfilePicCardState extends State<ProfilePicCard> {
             ),
           ),
           Divider_Widget(),
-          NewFeeds()
+          // ListView.builder(
+          //     physics: ScrollPhysics(),
+          //     shrinkWrap: true,
+          //     scrollDirection: Axis.horizontal,
+          //     itemCount: Const.list_userfeed.length,
+          //     itemBuilder: (BuildContext context, int index) => FeedCard(
+          //       total_share: Const.list_userfeed[index].total_share,
+          //       total_likes: Const.list_userfeed[index].total_likes,
+          //       date: Const.list_userfeed[index].date,
+          //       user_image: Const.list_userfeed[index].user_image,
+          //       total_comments: Const.list_userfeed[index].total_comments,
+          //       text: Const.list_userfeed[index].text,
+          //       name: Const.list_userfeed[index].name,
+          //       img_url: Const.list_userfeed[index].img_url,
+          //     )),
+          // PostScreen(userImage: 'https://images.unsplash.com/photo-1544724107-6d5c4caaff30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', username: 'Charles', caption: 'This is a facebook clone app developed only for learning purpose. Thank you.', timeAgo: '3hrs', imageUrl: null, likes: '32', comments: '10',shares: '9',),
+          // PostScreen(userImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', username: 'Minh Pham', caption: 'This is a facebook clone app developed only for learning purpose. Thank you.', timeAgo: '7hrs', imageUrl: "https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", likes: '432', comments: '120',shares: '90',),
+          // PostScreen(userImage: 'https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', username: 'Ben Parker', caption: 'This is a facebook clone app developed only for learning purpose. Thank you.', timeAgo: '8hrs', imageUrl: null, likes: '232', comments: '110',shares: '100',),
+          // PostScreen(userImage: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80', username: 'Nicolos Horn', caption: 'This is a facebook clone app developed only for learning purpose. Thank you.', timeAgo: '10hrs', imageUrl: "https://images.unsplash.com/photo-1598225176697-e7fc9857917b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", likes: '22', comments: '130',shares: '30',),
+          // PostScreen(userImage: 'https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2247&q=80', username: 'Luis Villasmil', caption: 'This is a facebook clone app developed only for learning purpose. Thank you.', timeAgo: '12hrs', imageUrl: "https://images.unsplash.com/photo-1558980664-3a031cf67ea8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", likes: '522', comments: '152',shares: '20',),
+          // PostScreen(userImage: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80', username: 'Alex', caption: 'This is a facebook clone app developed only for learning purpose. Thank you.', timeAgo: '2 days', imageUrl: null, likes: '123', comments: '12',shares: '1',),
+          // PostScreen(userImage: 'https://images.unsplash.com/photo-1598211686290-a8ef209d87c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3334&q=80', username: 'Tony', caption: 'This is a facebook clone app developed only for learning purpose. Thank you.', timeAgo: '2 days', imageUrl: "https://images.unsplash.com/photo-1598259812920-0f409c9d3f14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", likes: '125', comments: '13',shares: '4',),
+          // PostScreen(userImage: 'https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', username: 'Charles', caption: 'This is a facebook clone app developed only for learning purpose. Thank you.', timeAgo: '1 week', imageUrl: null, likes: '534', comments: '423',shares: '103',),
+          // PostScreen(userImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', username: 'Minh Pham', caption: 'This is a facebook clone app developed only for learning purpose. Thank you.', timeAgo: '2 week', imageUrl: "https://images.unsplash.com/photo-1558981033-f5e2ddd9c57e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", likes: '23', comments: '13',shares: '1',),
+          // PostScreen(userImage: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80', username: 'Nicolos', caption: 'This is a facebook clone app developed only for learning purpose. Thank you.', timeAgo: '2 week', imageUrl: "https://images.unsplash.com/photo-1593642532781-03e79bf5bec2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", likes: '21', comments: '20',shares: '23',),
+
+          Container(
+            child: ListView.builder(
+              itemCount: Const.list_userfeed.length,
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              scrollDirection: Axis.vertical,
+              itemBuilder: (context, index) {
+                return PostScreen(
+                  imageUrl: Const.list_userfeed[index].img_url,
+                  username: Const.list_userfeed[index].name,
+                  caption: Const.list_userfeed[index].text,
+                  comments: Const.list_userfeed[index].total_comments,
+                  likes: Const.list_userfeed[index].total_likes,
+                  userImage: Const.list_userfeed[index].user_image,
+                  shares: Const.list_userfeed[index].total_share,
+                  timeAgo: Const.list_userfeed[index].date,
+                );
+                // PostScreen(userImage: 'https://images.unsplash.com/photo-1544724107-6d5c4caaff30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60', username: 'Charles', caption: 'This is a facebook clone app developed only for learning purpose. Thank you.', timeAgo: '3hrs', imageUrl: null, likes: '32', comments: '10',shares: '9',);
+              },
+            ),
+          )
         ]),
       ),
     );

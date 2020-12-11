@@ -1,3 +1,5 @@
+import 'package:facebook/components/model/const.dart';
+import 'package:facebook/components/model/const.dart';
 import 'package:facebook/components/setting/info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -97,19 +99,18 @@ class _Setting_ScreenState extends State<Setting_Screen> {
                 shrinkWrap: true,
                 primary: false,
                 crossAxisCount: 2,
-                itemCount: _kategori.length,
+                itemCount: Const.comp_list.length,
                 itemBuilder: (context, index) {
+                  var msg = Const.comp_list[index].msg;
+                  var text = Const.comp_list[index].text;
+                  var icon = Const.comp_list[index].iconData;
+
                   return Container(
                       decoration: BoxDecoration(
                           color: Colors.transparent,
                           borderRadius: BorderRadius.all(Radius.circular(12))),
                       child: ClipRRect(
                         borderRadius: BorderRadius.all(Radius.circular(12)),
-                        // child: FadeInImage.assetNetwork(
-                        //   placeholder: 'waiting.png',
-                        //   image: imageList [index],
-                        //   fit: BoxFit.cover,
-                        // ),
                         child: Card(
                           child: Container(
                             padding: EdgeInsets.all(10.0),
@@ -117,15 +118,15 @@ class _Setting_ScreenState extends State<Setting_Screen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Icon(
-                                  Icons.favorite,
+                                  icon,
                                   color: Colors.redAccent,
                                 ),
                                 Text(
-                                  'Covid',
+                                  text,
                                   style: TextStyle(color: Colors.black),
                                 ),
                                 Text(
-                                  'Information center',
+                                  msg,
                                   style: TextStyle(color: Colors.black),
                                 )
                               ],

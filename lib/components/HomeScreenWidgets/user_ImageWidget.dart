@@ -1,3 +1,4 @@
+import 'package:facebook/components/model/const.dart';
 import 'package:flutter/material.dart';
 
 class User_ImageWidget extends StatefulWidget {
@@ -12,9 +13,8 @@ class _User_ImageWidgetState extends State<User_ImageWidget> {
       child: Row(
         children: [
           CircleAvatar(
-            radius: 25,
             backgroundImage:
-                NetworkImage('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8bWVufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
+                NetworkImage(Const.list_userfeed[0].user_image),
           ),
           SizedBox(
             width: 10,
