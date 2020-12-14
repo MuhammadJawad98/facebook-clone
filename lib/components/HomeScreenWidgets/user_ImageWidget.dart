@@ -12,7 +12,7 @@ class _User_ImageWidgetState extends State<User_ImageWidget> {
     return Container(
       child: Row(
         children: [
-          CircleAvatar(
+          CircleAvatar(radius: 30,
             backgroundImage:
                 NetworkImage(Const.list_userfeed[0].user_image),
           ),

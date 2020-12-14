@@ -40,6 +40,8 @@ dev_dependencies:
 #  auto_size_text: ^2.1.0
   story_view: ^0.12.5
   material_design_icons_flutter: ^4.0.5755
+  solid_bottom_sheet: ^0.1.9
+  animated_icon_button: ^0.3.0
 
 
 # For information on the generic Dart part of this file, see the
