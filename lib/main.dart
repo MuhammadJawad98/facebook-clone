@@ -1,6 +1,7 @@
 import 'package:facebook/ui/HomeScreen.dart';
 import 'package:facebook/ui/Notification_Screen.dart';
 import 'package:facebook/ui/ProfileScreen.dart';
+import 'package:facebook/ui/Search_Screen.dart';
 import 'package:facebook/ui/Setting_Screen.dart';
 import 'package:facebook/ui/VideoPlayer_Screen.dart';
 import 'package:flutter/material.dart';
@@ -28,11 +29,15 @@ class MyApp extends StatelessWidget {
                 )),
             backgroundColor: Colors.white,
             actions: <Widget>[
-              CircleAvatar(
-                backgroundColor: Colors.grey[200],
-                child: Icon(
-                  Icons.search,
-                  color: Colors.grey[900],
+              GestureDetector(onTap: (){
+                // Navigator.of(context).push(SearchScreen());
+              },
+                child: CircleAvatar(
+                  backgroundColor: Colors.grey[200],
+                  child: Icon(
+                    Icons.search,
+                    color: Colors.grey[900],
+                  ),
                 ),
               ),
               SizedBox(

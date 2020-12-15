@@ -165,14 +165,14 @@ class _PostStats extends StatelessWidget {
               ),
             ),
             Text(
-              '${comments} Comments',
+              '${comments}',
               style: TextStyle(
                 color: Colors.grey[600],
               ),
             ),
             const SizedBox(width: 8.0),
             Text(
-              '${share} Shares',
+              '${share}',
               style: TextStyle(
                 color: Colors.grey[600],
               ),
