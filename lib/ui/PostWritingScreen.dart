@@ -64,6 +64,7 @@ class _PostWritingScreenState extends State<PostWritingScreen>
                         ? post_btncolor = Colors.grey[400]
                         : setState(() {
                             post_btncolor = Colors.black87;
+                            print(textEditingController.text);
                           });
                   },
                 ))

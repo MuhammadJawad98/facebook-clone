@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Info extends StatefulWidget {
   String img_url, name, content, not;
+  IconData icon;
 
   Info(this.img_url, this.name, this.content, this.not);
 

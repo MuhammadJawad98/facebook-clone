@@ -8,15 +8,16 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'components/ProfileWidgets/ProfilePicCard.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyApp()));
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: DefaultTabController(
+    return Scaffold(
+      body: DefaultTabController(
         length: 5,
         child: Scaffold(
           appBar: AppBar(
@@ -29,17 +30,17 @@ class MyApp extends StatelessWidget {
                 )),
             backgroundColor: Colors.white,
             actions: <Widget>[
-              GestureDetector(onTap: (){
-                // Navigator.of(context).push(SearchScreen());
-              },
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey[200],
-                  child: Icon(
+              IconButton(
+                  icon: Icon(
                     Icons.search,
-                    color: Colors.grey[900],
+                    color: Colors.black87,
                   ),
-                ),
-              ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SearchScreen()),
+                    );
+                  }),
               SizedBox(
                 width: 20,
               ),

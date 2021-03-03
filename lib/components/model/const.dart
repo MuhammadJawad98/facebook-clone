@@ -272,15 +272,15 @@ class Const {
         'https://images.unsplash.com/photo-1485875437342-9b39470b3d95?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8d29tZW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
   ];
 static List<SettingComponents> comp_list = <SettingComponents>[
-  SettingComponents('COVID-19', 'Information Center',Icons.group),
-  SettingComponents('Friend', '300 Friends',Icons.person),
-  SettingComponents('Groups', '9 groups',Icons.group),
-  SettingComponents('Memories', '1 new',Icons.timelapse),
-  SettingComponents('Saved', '9 new',Icons.save),
-  SettingComponents('Pages', '9 new',Icons.pages),
-  SettingComponents('Events', '1 new',Icons.event),
-  SettingComponents('Gaming', '.',Icons.gamepad),
-  SettingComponents('Jobs', '.',Icons.shopping_bag),
+  SettingComponents('COVID-19', 'Information Center',Icons.group,Colors.amber),
+  SettingComponents('Friend', '300 Friends',Icons.person,Colors.cyan),
+  SettingComponents('Groups', '9 groups',Icons.group,Colors.redAccent),
+  SettingComponents('Memories', '1 new',Icons.timelapse,Colors.deepOrange),
+  SettingComponents('Saved', '9 new',Icons.save,Colors.lightBlueAccent),
+  SettingComponents('Pages', '9 new',Icons.pages,Colors.brown),
+  SettingComponents('Events', '1 new',Icons.event,Colors.pinkAccent),
+  SettingComponents('Gaming', '.',Icons.gamepad,Colors.deepOrangeAccent),
+  SettingComponents('Jobs', '.',Icons.shopping_bag,Colors.deepPurple),
 
 ];
 }

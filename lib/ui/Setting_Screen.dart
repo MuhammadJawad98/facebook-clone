@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:facebook/components/model/const.dart';
 import 'package:facebook/components/model/const.dart';
 import 'package:facebook/components/setting/info.dart';
@@ -104,6 +106,7 @@ class _Setting_ScreenState extends State<Setting_Screen> {
                   var msg = Const.comp_list[index].msg;
                   var text = Const.comp_list[index].text;
                   var icon = Const.comp_list[index].iconData;
+                  var icon_color = Const.comp_list[index].icon_color;
 
                   return Container(
                       decoration: BoxDecoration(
@@ -112,14 +115,18 @@ class _Setting_ScreenState extends State<Setting_Screen> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                         child: Card(
+                          elevation: 5,
                           child: Container(
-                            padding: EdgeInsets.all(10.0),
+                            padding: EdgeInsets.all(6.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Icon(
                                   icon,
-                                  color: Colors.redAccent,
+                                  color: icon_color,
+                                ),
+                                SizedBox(
+                                  height: 10,
                                 ),
                                 Text(
                                   text,
@@ -133,37 +140,33 @@ class _Setting_ScreenState extends State<Setting_Screen> {
                             ),
                           ),
                         ),
-                        // child: Card(
-                        //   child: Column(
-                        //     children: <Widget>[
-                        //       Image.network(
-                        //           'https://images.unsplash.com/photo-1529672425113-d3035c7f4837?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fGtpZHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',fit: BoxFit.cover,height: 80,),
-                        //     ],
-                        //   ),
-                        //   ),
                       ));
                 },
                 staggeredTileBuilder: (index) {
-                  return new StaggeredTile.count(1, index.isEven ? 0.6 : 0.5);
+                  return new StaggeredTile.count(1, index.isEven ? 0.7 : 0.6);
+
                 }),
           ),
         ],
       ),
     );
   }
+  // List<StaggeredTile> generateRandomTiles(int count) {
+  //   Random rnd = new Random();
+  //   List<StaggeredTile> _staggeredTiles = [];
+  //   for (int i=0; i<count; i++) {
+  //     num mainAxisCellCount = 0;
+  //     double temp = rnd.nextDouble();
+  //
+  //     if (temp > 0.6) {
+  //       mainAxisCellCount = temp + 0.5;
+  //     } else if (temp < 0.3) {
+  //       mainAxisCellCount = temp + 0.9;
+  //     } else {
+  //       mainAxisCellCount = temp + 0.7;
+  //     }
+  //     _staggeredTiles.add(new StaggeredTile.count(rnd.nextInt(1) + 1, mainAxisCellCount));
+  //   }
+  //   return _staggeredTiles;
+  // }
 }
-
-final List<Map<String, dynamic>> _kategori = [
-  {'cat': 'Flutter', 'color': Colors.pink},
-  {'cat': 'Laravel', 'color': Colors.blue},
-  {'cat': 'Vue.js', 'color': Colors.amber},
-  {'cat': 'Javascript', 'color': Colors.yellow},
-  {'cat': 'PHP', 'color': Colors.red},
-  {'cat': 'Java', 'color': Colors.black},
-  {'cat': 'Flutter', 'color': Colors.pink},
-  {'cat': 'Laravel', 'color': Colors.blue},
-  {'cat': 'Vue.js', 'color': Colors.amber},
-  {'cat': 'Javascript', 'color': Colors.yellow},
-  {'cat': 'PHP', 'color': Colors.red},
-  {'cat': 'Java', 'color': Colors.black},
-];
